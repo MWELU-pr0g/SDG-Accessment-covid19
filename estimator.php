@@ -20,25 +20,25 @@ severeImpact: {} // your severe case estimation
 
 }*/
 
-class Region
-{
-    public $continent = "Africa";
-    public $avgAge = 19.7;
-    public $avgDailyIncome = 5;
-    public $avgDailyIncomePopulation = 0.71;
+// class Region
+// {
+//     public $continent = "Africa";
+//     public $avgAge = 19.7;
+//     public $avgDailyIncome = 5;
+//     public $avgDailyIncomePopulation = 0.71;
 
-    function __constructor(
-        $nameContinent = "",
-        $averageAge = "",
-        $averageDailyIncome = "",
-        $averageDailyIncomePopulation = ""
-    ) {
-        $this->continent = $nameContinent;
-        $this->avgAge = $averageAge;
-        $this->avgDailyIncome = $averageDailyIncome;
-        $this->avgDailyIncomePopulation = $averageDailyIncomePopulation;
-    }
-}
+//     function __constructor(
+//         $nameContinent = "",
+//         $averageAge = "",
+//         $averageDailyIncome = "",
+//         $averageDailyIncomePopulation = ""
+//     ) {
+//         $this->continent = $nameContinent;
+//         $this->avgAge = $averageAge;
+//         $this->avgDailyIncome = $averageDailyIncome;
+//         $this->avgDailyIncomePopulation = $averageDailyIncomePopulation;
+//     }
+// }
 
 
 class CovidData
@@ -62,17 +62,21 @@ class CovidData
 
     function currentInfected()
     {
-        echo "TODAYS REPORTED CASES:" ."<br>";
-        return $this->reportedCases ."<br>";
+        echo "TODAYS REPORTED CASES:" . "<br>";
+        return $this->reportedCases . "<br>";
     }
 
     function impact()
     {
-        echo "The impact of unknown infected people:" ."<br>";
-                return $this->reportedCases * 10 ."<br>" ;
+        echo "The impact of unknown infected people:" . "<br>";
+        return $this->reportedCases * 10 . "<br>";
     }
 
+
+
+
     function severeimpact()
+
     {
         $date =  date('Y-m-d') . "<br>";
         echo "Todays reported cases date :" . $date;
@@ -80,7 +84,7 @@ class CovidData
 
 
         echo "In 28 days to come which will be on this date:" . $create  . "<br>";
-        echo "The infected people will be". "<br>";
+        echo "The infected people will be" . "<br>";
         return $this->reportedCases * 512 . " people.";
     }
 }
