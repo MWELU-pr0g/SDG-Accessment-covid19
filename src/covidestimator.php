@@ -1,8 +1,7 @@
 <?php
 
-namespace classes;
 
-class Covidestimator
+class CovidEstimator
 {
 
 
@@ -12,7 +11,7 @@ class Covidestimator
     function __construct($inputDataStr)
     {
 
-        $decodedData = ($inputDataStr);
+        $decodedData = json_decode($inputDataStr);
 
         $this->inputdata = $decodedData;
 
@@ -87,9 +86,26 @@ class Covidestimator
     public function getOutput() 
     {
         $this->response['data'] = $this->inputdata;
-        return $this->response;
+        return json_encode($this->response);
     }
 
 
 
 }
+
+$jsonStr = '{
+    "region": {
+      "name": "Africa",
+      "avgAge": 19.7,
+      "avgDailyIncomeInUSD": 5,
+      "avgDailyIncomePopulation": 0.71
+    },
+    "periodType": "days",
+    "timeToElapse": 58,
+    "reportedCases": 674,
+    "population": 66622705,
+    "totalHospitalBeds": 1380614
+  }';
+
+$case1 = new CovidEstimator($jsonStr);
+echo $case1->getOutput();
